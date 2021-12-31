@@ -15,7 +15,7 @@
   <input type="button" value="day" onclick="
   document.querySelector('body').style.backgroundColor='white';
   document.querySelector('body').style.color='black';">
-  <input type="button" value="black" onclick="
+  <input type="button" value="night" onclick="
     if(document.querySelector('body').dataset.mode==='day') {
       document.querySelector('body').style.backgroundColor='black';
       document.querySelector('body').style.color='white';
@@ -26,6 +26,31 @@
       document.querySelector('body').style.color='black';
       document.querySelector('body').dataset.mode='day';
       this.value='night';}">
+  <input id ="night_day" type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night') {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white'; 
+      this.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length) {
+        alist[i].style.color = 'powderblue';
+        i = i + 1;
+      }
+    } else {
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value = 'night';
+      
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length) {
+        alist[i].style.color = 'blue';
+        i = i + 1;
+      }
+    } ">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>
@@ -49,7 +74,7 @@
         dates, regular expressions, standard data structures, and the Document Object Model (DOM).
       </p>
     </div>
-  </div> 
+  </div>
 </body>
 </html>
 
